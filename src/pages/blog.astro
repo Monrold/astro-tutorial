@@ -15,14 +15,23 @@ const pageTitleBlog = "My astro learning blog";
 	</head>
 	<body>
 		<Header/>
-        <h1>{pageTitleBlog}</h1>
-        <p>This is where I will post about my journey learning Astro.</p>
+		<div class="fondo2 flex justify-center items-center flex-col"> 
+		<style> 
+		
+		.fondo2{height:auto}
 
-        <ul>
-            <li><a href="/posts/post-1/">Post 1</a></li>
-            <li><a href="/posts/post-2/">Post 2</a></li>
-            <li><a href="/posts/post-3/">Post 3</a></li>     
+		@media (min-width: 1280px)
+		{
+		.fondo2 {height:80vh;}
+		}
+		
+		</style>
+        <h1 class="titlebblog text-2xl text-center lg:px-72 lg:text-6xl text-white">Descubre los mejors tips, secetos y noticias sobre diseño y frontend</h1>
+        <ul class="flex flex-wrap lg:justify-center lg:m-10">
+            <li class="border border-[#979797] p-20 mx-4 my-2 rounded-lg"><a class="p-20 text-[#979797]" href="/posts/post-1/">Post 1</a></li>
+            <li class="border border-[#979797] p-20 mx-4 my-2 rounded-lg"><a class="p-20 text-[#979797]" href="/posts/post-2/">Post 2</a></li>    
         </ul>
+		</div>
         <Footer/>
 	</body>
 </html>
