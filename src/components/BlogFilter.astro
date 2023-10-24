@@ -1,0 +1,9 @@
+---
+const tags = ["astro","frontend"];
+---
+
+
+<div class="flex justify-center items-center">
+    {tags.map((tag) => <p class="p-3 mx-2 border-[#ffffff] border text-center rounded-lg text-white hover:bg-[#2AA0D9] hover:border-transparent"><a class="p-3" href={`/tags/${tag}`}>{tag}</a></p>)}
+</div>
+

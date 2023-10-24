@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/baseLayout.astro';
+import BlogFilter from '../components/BlogFilter.astro';
 const allPosts = await Astro.glob('../pages/posts/*.md');
 const pageTitle = "My astro learning blog";
 ---
@@ -16,7 +17,8 @@ const pageTitle = "My astro learning blog";
 		}
 		
 		</style>
-        <h1 class="titlebblog text-5xl text-center lg:px-72 lg:text-6xl text-white">Descubre los mejores tips, secretos y noticias sobre diseño y frontend</h1>
+        <h1 class="titlebblog py-4 text-5xl text-center lg:px-72 lg:text-6xl text-white">Descubre los mejores tips, secretos y noticias sobre diseño y frontend</h1>
+        <BlogFilter/>
         <ul class="flex flex-col my-3 mx-5 box-border justify-center  lg:m-10 lg:flex-row">
 			{allPosts.map((post) => <li class="bg-cover lg:mx-4 my-3 rounded-lg lg:w-1/2"><a class="text-[#979797]" href={post.url}><img class="hover:ring ring-[#979797] rounded-xl" src={post.frontmatter.image.url} alt={post.frontmatter.title} />{post.frontmatter.title}</a></li>)}  
         </ul>
