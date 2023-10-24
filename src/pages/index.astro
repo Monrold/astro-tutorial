@@ -1,17 +1,10 @@
 ---
-import Header from '../components/header.astro';
-import Footer from '../components/footer.astro';
-import '../pages/styles/global.css';
-const pageTitleHome = "Home page"
+import BaseLayout from '../layouts/baseLayout.astro';
+const pageTitle = "Home page"
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitleHome}</title>
+<BaseLayout pageTitle={pageTitle}>
+
 		<style>
 		.fondo {
 		height:80vh;
@@ -22,18 +15,9 @@ const pageTitleHome = "Home page"
 		}
 
 		</style>
-	</head>
-	<body>
-		<Header/>
 		<div class="max-w-screen-xl fondo flex flex-col justify-center items-center box-border mx-auto lg:px-72"> 
 		<h1 class="text-5xl font-bold text-center text-white lg:text-7xl ">Webs que <span class="text-[#2AA0D9]">conectan</span> con tus clientes </h1>
 		<p class="text-2xl text-center text-white mt-4 lg:px-36"> Yo soy Luis Montaño diseñador y desarrollador frontend</p>
-		<div x-data="{ open: false }">
-			<button @click="open = ! open">Toggle</button>
-		 
-			<div x-show="open" @click.outside="open = false">Contents...</div>
-		</div>
 	    </div>
-		<Footer/>
-	</body>
-</html>
+
+</BaseLayout>
